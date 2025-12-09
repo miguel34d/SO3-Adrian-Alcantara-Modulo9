@@ -139,8 +139,8 @@ ssh ansible@ip # para crear la huella
 
 ------------------------------------------------------------------------
 Maquina WINDOWS 
-net user ansible "MiguelSO3*" /add
-net localgroup Administrators ansible /add
+net user "ansible" "MiguelSO3*" /add /fullname:"Ansible User"
+net localgroup Administrators "ansible" /add
 net localgroup "Remote Management Users" ansible /add
 net user ansible "MiguelSO3*"
 Get-NetConnectionProfile
@@ -287,4 +287,5 @@ nano instalacion_nginx.yml
 -------------------------------------------------------------------------------------------------------------
 
 ansible-playbook ~/Desktop/instalacion_nginx.yml --ask-become-pass
+
 
