@@ -139,7 +139,7 @@ ssh ansible@ip # para crear la huella
 
 ------------------------------------------------------------------------
 Maquina WINDOWS 
-net user "ansible" "MiguelSO3*" /add /fullname:"Ansible User"
+net user "ansible" "MiguelSO3*" /add /fullname:"Ansible"
 net localgroup Administrators "ansible" /add
 net localgroup "Remote Management Users" ansible /add
 net user ansible "MiguelSO3*"
@@ -191,13 +191,13 @@ ansible linux -m ping
 nano SO3.txt 
 
 # Copiar archivo a Windows
-ansible windows -m win_copy -a "src='/home/miguel/Desktop/SO3.txt' dest='C:/Users/ansible.DESKTOP-F0BL9MH/Desktop/'"
+ansible windows -m win_copy -a "src='/home/miguel/Desktop/SO3.txt' dest='C:/Users/ansible/Desktop/'"
 
 # Mover archivo en Windows
-ansible windows -m win_copy -a "src='C:/Users/ansible.DESKTOP-F0BL9MH/Desktop/SO3.txt' dest='C:/Users/ansible.DESKTOP-F0BL9MH/Documents' remote_src=true"
+ansible windows -m win_copy -a "src='C:/Users/ansible/Desktop/SO3.txt' dest='C:/Users/ansible/Documents' remote_src=true"
 
 SI NO FUNCIONA 
-ansible windows -m copy -a "src='C:/Users/ansible.DESKTOP-F0BL9MH/Desktop/SO3.txt' dest='C:/Users/ansible.DESKTOP-F0BL9MH/Documents' remote_src=true"
+ansible windows -m copy -a "src='C:/Users/ansible/Desktop/SO3.txt' dest='C:/Users/ansible/Documents' remote_src=true"
 
 
 # Reiniciar máquina Linux
@@ -287,5 +287,6 @@ nano instalacion_nginx.yml
 -------------------------------------------------------------------------------------------------------------
 
 ansible-playbook ~/Desktop/instalacion_nginx.yml --ask-become-pass
+
 
 
